@@ -1,16 +1,13 @@
 ---
-  - name: Create file under /tmp
+  - name: Add lines in the file
     hosts: localhost
     tasks:
-      - name: Modify file in /tmp called file1.txt
-        file:
+      - name: Add lines in the file
+        blockinfile:
           path: /tmp/file1.txt
-          state: touch
-      - name: Add lines in file1.txt
-        lineinfile:
-          path: /tmp/file1.txt
-          line: '{{ item }}'
-        with_items:
-          - This is line 1
-          - This is line 2
+          block: |
+            This is line 1
+            This is line 2
+
+
           

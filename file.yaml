@@ -4,5 +4,5 @@
     tasks:
       - name: Create an empty file in /tmp called file.yaml
         file:
-          path: /tmp/file.txt
+          path: /tmp/file2.txt
           state: touch

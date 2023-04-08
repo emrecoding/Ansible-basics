@@ -1,0 +1,8 @@
+---
+- name: Create empty file under /tmp
+  hosts: localhost
+  tasks:
+    - name: Create an empty file in /tmp called file.yaml
+      file:
+        path: /tmp/file.yaml
+        state: touch

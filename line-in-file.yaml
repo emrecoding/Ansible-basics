@@ -1,0 +1,15 @@
+---
+  - name: Create file under /tmp
+    hosts: localhost
+    tasks:
+      - name: Modify file in /tmp called file1.txt
+        file:
+          path: /tmp/file1.txt
+          state: touch
+      - name: Add lines in file1.txt
+        ansible.builtin.lineinfile:
+          path: /tmp/file1.txt
+          state: present
+          line: "This is line 1"
+          line: "This is line 2"
+          create: no

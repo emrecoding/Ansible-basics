@@ -7,9 +7,10 @@
           path: /tmp/file1.txt
           state: touch
       - name: Add lines in file1.txt
-        ansible.builtin.lineinfile:
+        lineinfile:
           path: /tmp/file1.txt
-          state: present
-          line: "This is line 1"
-          line: "This is line 2"
-          create: no
+          line: '{{ item }}'
+        with_items:
+          - This is line 1
+          - This is line 2
+          

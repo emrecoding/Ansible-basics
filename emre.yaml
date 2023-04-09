@@ -1,0 +1,16 @@
+---
+  - name: create file in /tmp/ named emre.txt
+    hosts: localhost
+    tasks:
+      - name: creating file with given path as such /tmp/emre.txt
+        file:
+          path: /tmp/emre.txt
+          state: touch
+      - name: adding lines to emre.txt
+        blockinfile:
+          path: /tmp/emre.txt
+          block: |
+            Mustafa Kemal Atatürk
+            Türkiye Cumhuriyeti Laiktir Laik Kalacak
+        
+    

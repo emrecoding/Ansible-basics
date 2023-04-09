@@ -21,3 +21,6 @@
           name: httpd
           state: started
           enabled: yes
+
+### The following code has been approved. ###
+###   Proceed to deploy in environment    ###

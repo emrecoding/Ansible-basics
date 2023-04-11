@@ -7,8 +7,12 @@
           path: /etc/selinux/config
           regexp: "^SELINUX="
           line: SELINUX=disabled
+
       - name: print current SELinux configuration
         shell: cat /etc/selinux/config
         register: selinux_output
       - debug:
           var: selinux_output.stdout
+          
+      - name: system rebooting configuration to take effect
+        command: reboot

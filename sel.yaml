@@ -14,5 +14,5 @@
       - debug:
           var: selinux_output.stdout
           
-      - name: system rebooting configuration to take effect
+      - name: system rebooting for configuration
         command: reboot

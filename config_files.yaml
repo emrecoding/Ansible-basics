@@ -1,0 +1,27 @@
+---
+  - name: add 3 files under root user's home directory
+    hosts: localhost
+    tasks:
+
+      - name: create test_config1
+        file:
+          path: /root/test_config1
+          state: touch
+          owner: root
+          group: root
+          mode: u=rw,g=rw,o=r
+      - name: create test_config2
+        file:
+          path: /root/test_config2
+          state: touch
+          owner: root
+          group: root
+          mode: u=rw,g=rw,o=r
+      - name: create test_config3
+        file:
+          path: /root/test_config3
+          state: touch
+          owner: root
+          group: root
+          mode: u=rw,g=rw,o=r
+
